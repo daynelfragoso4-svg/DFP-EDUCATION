@@ -1,270 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b1f1a">
-<title>DFP Education | Reciclaje de aceites</title>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Figtree:wght@400;500;600&display=swap">
-
-<style>
-:root{
-  color-scheme:dark;
-  --ink:#eef3e4;
-  --soft:#b9cbb3;
-  --moss:#8fd18a;
-  --water:#74c3d9;
-  --sand:#e8d9a8;
-  --panel:rgba(8,24,19,.65);
-  --line:rgba(238,243,228,.18);
-  --serif:"Fraunces",Georgia,serif;
-  --sans:"Figtree",system-ui,sans-serif;
-  box-sizing:border-box;
-}
-*,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
-  margin:0;
-  background:#0b1f1a;
-  color:var(--ink);
-  font:400 1.05rem/1.65 var(--sans);
-  overflow-x:hidden;
-}
-#fx{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  z-index:1;
-}
-header{
-  position:fixed;
-  top:0;left:0;right:0;
-  z-index:20;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:1rem;
-  padding:1rem 1.4rem;
-  background:rgba(8,22,18,.88);
-  backdrop-filter:blur(12px);
-}
-header strong{font:700 1.15rem var(--serif)}
-nav{display:flex;gap:1.1rem;flex-wrap:wrap}
-nav a{
-  color:var(--soft);
-  text-decoration:none;
-  font-size:.9rem;
-}
-nav a:hover{color:var(--moss)}
-section,footer{position:relative;z-index:2}
-.hero{
-  min-height:100svh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:8rem 1.6rem 12rem;
-  max-width:1100px;
-  margin:auto;
-}
-.hero h1{
-  font:900 clamp(2.8rem,9vw,7rem)/.95 var(--serif);
-  margin:0 0 1.4rem;
-  max-width:12ch;
-}
-.hero p{
-  max-width:48ch;
-  font-size:1.2rem;
-  color:var(--soft);
-}
-.hero h1,.hero p,.hero .btn{
-  opacity:0;
-  transform:translateY(24px);
-  animation:in 1.2s forwards;
-}
-.hero p{animation-delay:.3s}
-.hero .btn{animation-delay:.6s}
-@keyframes in{to{opacity:1;transform:none}}
-.btn{
-  display:inline-block;
-  background:var(--moss);
-  color:#0b2417;
-  text-decoration:none;
-  font-weight:600;
-  padding:.85rem 1.4rem;
-  border-radius:999px;
-  border:0;
-  cursor:pointer;
-  font:600 1rem var(--sans);
-}
-.btn:hover{background:#b6e8a8}
-.btn.ghost{
-  background:transparent;
-  color:var(--ink);
-  border:1px solid var(--line);
-}
-.hills{
-  position:absolute;
-  left:0;right:0;bottom:0;
-  height:42vh;
-  min-height:260px;
-  z-index:0;
-  pointer-events:none;
-}
-.hills svg{
-  position:absolute;
-  bottom:0;left:-5%;
-  width:110%;height:100%;
-}
-.wrap{
-  max-width:1000px;
-  margin:auto;
-  padding:6rem 1.6rem;
-}
-.wrap h2{
-  font:700 clamp(2rem,5vw,3.4rem)/1.05 var(--serif);
-  margin:0 0 1rem;
-}
-.lead{
-  color:var(--soft);
-  max-width:60ch;
-  font-size:1.12rem;
-}
-.layer{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);
-  gap:2.5rem;
-  align-items:center;
-  padding:2.5rem 0;
-  border-top:1px solid var(--line);
-}
-.layer h3{font:700 2rem/1.1 var(--serif);margin:0}
-.layer .n{
-  font:900 clamp(2.5rem,7vw,5rem)/1 var(--serif);
-  color:var(--accent,var(--moss));
-  display:block;
-}
-.layer p{color:var(--soft);margin:.4rem 0}
-.forest{--accent:var(--moss)}
-.water{--accent:var(--water)}
-.air{--accent:var(--sand)}
-.apps{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:1.4rem;
-  margin-top:2rem;
-}
-.app{
-  background:var(--panel);
-  backdrop-filter:blur(8px);
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:1.8rem;
-}
-.app h3{font:700 1.6rem var(--serif);margin:0 0 .5rem}
-.app p{color:var(--soft);margin:0 0 1.2rem}
-.tag{
-  display:inline-block;
-  color:var(--moss);
-  border:1px solid rgba(143,209,138,.35);
-  padding:.2rem .65rem;
-  border-radius:20px;
-  font-size:.8rem;
-  margin-bottom:.8rem;
-}
-.qr-card{display:flex;flex-direction:column;align-items:flex-start}
-.qr-plate{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:230px;
-  min-height:230px;
-  padding:14px;
-  margin:10px 0 18px;
-  background:#fff;
-  border:3px solid var(--moss);
-  border-radius:18px;
-  line-height:0;
-}
-.qr-plate svg{width:100%;height:auto}
-.qr-url{
-  font-size:.85rem;
-  color:var(--soft);
-  overflow-wrap:anywhere;
-}
-.qr-status{font-size:.9rem;color:var(--moss)}
-footer{
-  padding:3rem 1.6rem;
-  text-align:center;
-  color:var(--soft);
-  background:rgba(5,14,11,.7);
-}
-footer p{margin:.2rem 0}
-@media(max-width:720px){
-  .layer{grid-template-columns:1fr;gap:.8rem}
-  nav{gap:.7rem}
-  nav a{font-size:.78rem}
-  header{padding:.8rem}
-  header strong{font-size:1rem}
-}
-@media(max-width:480px){
-  .qr-plate{width:200px;min-height:200px}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation-duration:.01ms!important;scroll-behavior:auto!important}
-}
-</style>
-</head>
-
-<body>
-<canvas id="fx" aria-hidden="true"></canvas>
-
-<header>
-  <strong>DFP Education</strong>
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#proyecto">Proyecto</a>
-    <a href="#impacto">Impacto</a>
-    <a href="#productos">Productos</a>
-    <a href="#aplicaciones">Aplicaciones</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</header>
-
-<main>
-
-<section id="inicio" class="hero">
-  <span class="tag">PROYECTO DE CIENCIAS</span>
-  <h1>Una gota de aceite puede cambiarlo todo.</h1>
-  <p>
-    Bienvenido a DFP Education. Conoce nuestro proyecto educativo
-    sobre el reciclaje de aceites usados y la importancia de proteger
-    el agua y el medio ambiente.
-  </p>
-  <a href="#proyecto" class="btn">Conocer el proyecto</a>
-
-  <div class="hills" aria-hidden="true">
-    <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
-      <path d="M0 170 C150 90 300 120 450 160 S750 200 900 130 1100 90 1200 140 V300 H0Z" fill="#14402f" opacity=".75"/>
-    </svg>
-    <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
-      <path d="M0 220 C200 160 380 230 600 200 S1000 150 1200 210 V300 H0Z" fill="#0f3325" opacity=".92"/>
-    </svg>
-    <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
-      <path d="M0 260 C250 230 450 280 700 255 S1050 235 1200 262 V300 H0Z" fill="#0a251b"/>
-    </svg>
-  </div>
-</section>
-
-<section id="proyecto">
-  <div class="wrap">
-    <h2>Nuestro proyecto de ciencias</h2>
-    <p class="lead">
-      El proyecto busca promover la recolección y el aprovechamiento
-      responsable del aceite de cocina usado, evitando que termine
+responsable del aceite de cocina usado, evitando que termine
       contaminando el medio ambiente.
     </p>
 
@@ -375,6 +109,39 @@ footer p{margin:.2rem 0}
           de las actividades realizadas.
         </p>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="eco-challenge">
+  <div class="wrap">
+    <span class="tag">JUEGO EDUCATIVO</span>
+    <h2>Eco Challenge</h2>
+    <p class="lead">Pon a prueba lo que sabes sobre el reciclaje del aceite usado. Responde 10 preguntas y suma puntos por cada respuesta correcta.</p>
+
+    <div class="eco-game">
+      <div class="eco-top">
+        <div class="eco-stat">Pregunta: <strong id="ecoQuestionNumber">1/10</strong></div>
+        <div class="eco-stat">Puntos: <strong id="ecoScore">0</strong></div>
+        <div class="eco-stat">Récord: <strong id="ecoRecord">0</strong></div>
+      </div>
+      <div class="eco-progress" aria-label="Progreso del juego"><span id="ecoProgress"></span></div>
+      <div id="ecoPlayArea">
+        <p class="eco-small" id="ecoCategory">RETO AMBIENTAL</p>
+        <h3 class="eco-question" id="ecoQuestion">¿Qué debes hacer con el aceite de cocina usado?</h3>
+        <div class="eco-options" id="ecoOptions"></div>
+        <p class="eco-feedback" id="ecoFeedback" aria-live="polite">Elige una respuesta para continuar.</p>
+        <div class="eco-actions">
+          <button class="btn" id="ecoNext" type="button" disabled>Siguiente pregunta</button>
+          <span class="eco-small">Cada respuesta correcta vale 10 puntos.</span>
+        </div>
+      </div>
+      <div id="ecoFinal" hidden>
+        <p class="eco-small">RESULTADO FINAL</p>
+        <div class="eco-result" id="ecoFinalScore">0/100 puntos</div>
+        <p id="ecoFinalMessage" class="lead"></p>
+        <button class="btn" id="ecoRestart" type="button">Volver a jugar</button>
+      </div>
     </div>
   </div>
 </section>
@@ -528,174 +295,3 @@ footer p{margin:.2rem 0}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 
 <script>
-(function(){
-  /* Fondo dinámico */
-  var stops=[
-    [11,31,26],
-    [18,60,46],
-    [24,84,66],
-    [18,72,92],
-    [12,44,70],
-    [34,44,28]
-  ];
-
-  function lerp(a,b,t){return a+(b-a)*t}
-
-  function bg(){
-    var max=document.documentElement.scrollHeight-innerHeight;
-    var p=max>0?scrollY/max:0;
-    var x=p*(stops.length-1);
-    var i=Math.min(Math.floor(x),stops.length-2);
-    var t=x-i;
-    var a=stops[i],b=stops[i+1];
-
-    document.body.style.background='rgb('+[0,1,2]
-      .map(function(k){
-        return Math.round(lerp(a[k],b[k],t));
-      }).join(',')+')';
-  }
-
-  addEventListener('scroll',bg,{passive:true});
-  addEventListener('resize',bg);
-  bg();
-
-  /* Animación de hojas y luciérnagas */
-  var cv=document.getElementById('fx');
-  var cx=cv.getContext('2d');
-  var W,H,P=[],mx=.5;
-
-  var calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function size(){
-    var d=devicePixelRatio||1;
-    W=cv.width=innerWidth*d;
-    H=cv.height=innerHeight*d;
-    cv.dpr=d;
-  }
-
-  size();
-  addEventListener('resize',size);
-
-  addEventListener('pointermove',function(e){
-    mx=e.clientX/innerWidth;
-  });
-
-  var cols=['#8fd18a','#b6e08a','#d9c76a','#6fbf7a'];
-
-  function mk(){
-    var leaf=Math.random()<.7;
-    return {
-      x:Math.random()*W,
-      y:Math.random()*H,
-      r:(leaf?5:2)*cv.dpr*(.6+Math.random()),
-      vy:(.25+Math.random()*.6)*cv.dpr,
-      ph:Math.random()*6.28,
-      sp:.004+Math.random()*.01,
-      rot:Math.random()*6.28,
-      leaf:leaf,
-      c:cols[Math.floor(Math.random()*cols.length)]
-    };
-  }
-
-  for(var i=0;i<(calm?20:70);i++)P.push(mk());
-
-  function draw(t){
-    cx.clearRect(0,0,W,H);
-
-    P.forEach(function(p){
-      p.ph+=p.sp;
-      p.rot+=.01;
-      p.y+=(p.leaf?p.vy:-p.vy*.25);
-      p.x+=Math.sin(p.ph*3)*.6*cv.dpr+(mx-.5)*1.4*cv.dpr;
-
-      if(p.y>H+20){p.y=-20;p.x=Math.random()*W}
-      if(p.y<-20){p.y=H+20}
-      if(p.x<-20)p.x=W+20;
-      if(p.x>W+20)p.x=-20;
-
-      cx.save();
-      cx.translate(p.x,p.y);
-
-      if(p.leaf){
-        cx.rotate(p.rot);
-        cx.globalAlpha=.55;
-        cx.fillStyle=p.c;
-        cx.beginPath();
-        cx.ellipse(0,0,p.r,p.r*.45,0,0,6.28);
-        cx.fill();
-      }else{
-        var g=.4+.6*Math.abs(Math.sin(t/900+p.ph));
-        cx.globalAlpha=g*.8;
-        cx.shadowColor='#ffe98a';
-        cx.shadowBlur=12*cv.dpr;
-        cx.fillStyle='#fff3b0';
-        cx.beginPath();
-        cx.arc(0,0,p.r,0,6.28);
-        cx.fill();
-      }
-
-      cx.restore();
-    });
-
-    if(!calm)requestAnimationFrame(draw);
-  }
-
-  requestAnimationFrame(draw);
-})();
-
-/* Generador automático de QR */
-(function(){
-  var plate=document.getElementById('qrPlate');
-  var urlEl=document.getElementById('qrUrl');
-  var copyBtn=document.getElementById('qrCopy');
-  var status=document.getElementById('qrStatus');
-
-  if(!plate||!urlEl||!copyBtn||!status)return;
-
-  var appUrl=window.location.href.split('#')[0];
-  urlEl.textContent=appUrl;
-
-  try{
-    if(typeof qrcode!=='function'){
-      throw new Error('La librería QR no está disponible.');
-    }
-
-    var qr=qrcode(0,'M');
-    qr.addData(appUrl);
-    qr.make();
-
-    plate.innerHTML=qr.createSvgTag(4,2);
-
-    var svg=plate.querySelector('svg');
-
-    if(svg){
-      svg.setAttribute('role','img');
-      svg.setAttribute('aria-label','Código QR para abrir DFP Education');
-      svg.setAttribute('shape-rendering','crispEdges');
-    }
-  }catch(error){
-    plate.textContent='No se pudo generar el QR. Comprueba tu conexión.';
-    status.textContent='Puedes utilizar el enlace mostrado.';
-  }
-
-  copyBtn.addEventListener('click',function(){
-    if(navigator.clipboard&&window.isSecureContext){
-      navigator.clipboard.writeText(appUrl).then(function(){
-        status.textContent='¡Enlace copiado!';
-      }).catch(function(){
-        status.textContent='No se pudo copiar el enlace.';
-      });
-    }else{
-      status.textContent='Selecciona el enlace para copiarlo.';
-      var range=document.createRange();
-      range.selectNodeContents(urlEl);
-      var selection=window.getSelection();
-      selection.removeAllRanges();
-      selection.addRange(range);
-    }
-  });
-})();
-</script>
-
-</body>
-</html>
