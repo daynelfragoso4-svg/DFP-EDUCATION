@@ -1,4 +1,304 @@
-responsable del aceite de cocina usado, evitando que termine
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1f1a">
+<title>DFP Education | Reciclaje de aceites</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Figtree:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  color-scheme:dark;
+  --ink:#eef3e4;
+  --soft:#b9cbb3;
+  --moss:#8fd18a;
+  --water:#74c3d9;
+  --sand:#e8d9a8;
+  --panel:rgba(8,24,19,.65);
+  --line:rgba(238,243,228,.18);
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Figtree",system-ui,sans-serif;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;
+  background:#0b1f1a;
+  color:var(--ink);
+  font:400 1.05rem/1.65 var(--sans);
+  overflow-x:hidden;
+}
+#fx{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:1;
+}
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:20;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:1rem 1.4rem;
+  background:rgba(8,22,18,.88);
+  backdrop-filter:blur(12px);
+}
+header strong{font:700 1.15rem var(--serif)}
+nav{display:flex;gap:1.1rem;flex-wrap:wrap}
+nav a{
+  color:var(--soft);
+  text-decoration:none;
+  font-size:.9rem;
+}
+nav a:hover{color:var(--moss)}
+section,footer{position:relative;z-index:2}
+.hero{
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:8rem 1.6rem 12rem;
+  max-width:1100px;
+  margin:auto;
+}
+.hero h1{
+  font:900 clamp(2.8rem,9vw,7rem)/.95 var(--serif);
+  margin:0 0 1.4rem;
+  max-width:12ch;
+}
+.hero p{
+  max-width:48ch;
+  font-size:1.2rem;
+  color:var(--soft);
+}
+.hero h1,.hero p,.hero .btn{
+  opacity:0;
+  transform:translateY(24px);
+  animation:in 1.2s forwards;
+}
+.hero p{animation-delay:.3s}
+.hero .btn{animation-delay:.6s}
+@keyframes in{to{opacity:1;transform:none}}
+.btn{
+  display:inline-block;
+  background:var(--moss);
+  color:#0b2417;
+  text-decoration:none;
+  font-weight:600;
+  padding:.85rem 1.4rem;
+  border-radius:999px;
+  border:0;
+  cursor:pointer;
+  font:600 1rem var(--sans);
+}
+.btn:hover{background:#b6e8a8}
+.btn.ghost{
+  background:transparent;
+  color:var(--ink);
+  border:1px solid var(--line);
+}
+.hills{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:42vh;
+  min-height:260px;
+  z-index:0;
+  pointer-events:none;
+}
+.hills svg{
+  position:absolute;
+  bottom:0;left:-5%;
+  width:110%;height:100%;
+}
+.wrap{
+  max-width:1000px;
+  margin:auto;
+  padding:6rem 1.6rem;
+}
+.wrap h2{
+  font:700 clamp(2rem,5vw,3.4rem)/1.05 var(--serif);
+  margin:0 0 1rem;
+}
+.lead{
+  color:var(--soft);
+  max-width:60ch;
+  font-size:1.12rem;
+}
+.layer{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);
+  gap:2.5rem;
+  align-items:center;
+  padding:2.5rem 0;
+  border-top:1px solid var(--line);
+}
+.layer h3{font:700 2rem/1.1 var(--serif);margin:0}
+.layer .n{
+  font:900 clamp(2.5rem,7vw,5rem)/1 var(--serif);
+  color:var(--accent,var(--moss));
+  display:block;
+}
+.layer p{color:var(--soft);margin:.4rem 0}
+.forest{--accent:var(--moss)}
+.water{--accent:var(--water)}
+.air{--accent:var(--sand)}
+.apps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1.4rem;
+  margin-top:2rem;
+}
+.app{
+  background:var(--panel);
+  backdrop-filter:blur(8px);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:1.8rem;
+}
+.app h3{font:700 1.6rem var(--serif);margin:0 0 .5rem}
+.app p{color:var(--soft);margin:0 0 1.2rem}
+.tag{
+  display:inline-block;
+  color:var(--moss);
+  border:1px solid rgba(143,209,138,.35);
+  padding:.2rem .65rem;
+  border-radius:20px;
+  font-size:.8rem;
+  margin-bottom:.8rem;
+}
+.qr-card{display:flex;flex-direction:column;align-items:flex-start}
+.qr-plate{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:230px;
+  min-height:230px;
+  padding:14px;
+  margin:10px 0 18px;
+  background:#fff;
+  border:3px solid var(--moss);
+  border-radius:18px;
+  line-height:0;
+}
+.qr-plate svg{width:100%;height:auto}
+.qr-url{
+  font-size:.85rem;
+  color:var(--soft);
+  overflow-wrap:anywhere;
+}
+.qr-status{font-size:.9rem;color:var(--moss)}
+footer{
+  padding:3rem 1.6rem;
+  text-align:center;
+  color:var(--soft);
+  background:rgba(5,14,11,.7);
+}
+footer p{margin:.2rem 0}
+@media(max-width:720px){
+  .layer{grid-template-columns:1fr;gap:.8rem}
+  nav{gap:.7rem}
+  nav a{font-size:.78rem}
+  header{padding:.8rem}
+  header strong{font-size:1rem}
+}
+@media(max-width:480px){
+  .qr-plate{width:200px;min-height:200px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+
+/* ECO CHALLENGE */
+.eco-game{
+  background:linear-gradient(145deg,rgba(18,60,46,.88),rgba(8,24,19,.92));
+  border:1px solid rgba(143,209,138,.35);
+  border-radius:26px;
+  padding:clamp(1.2rem,4vw,2rem);
+  margin-top:2rem;
+  box-shadow:0 18px 55px rgba(0,0,0,.18);
+}
+.eco-top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+.eco-stat{border:1px solid var(--line);border-radius:14px;padding:.65rem 1rem;color:var(--soft)}
+.eco-stat strong{color:var(--moss)}
+.eco-progress{height:9px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;margin:1.2rem 0}
+.eco-progress span{display:block;height:100%;width:0;background:var(--moss);transition:width .25s}
+.eco-question{font:700 clamp(1.3rem,3vw,2rem)/1.2 var(--serif);margin:1.2rem 0}
+.eco-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.eco-option{
+  text-align:left;background:rgba(255,255,255,.06);color:var(--ink);
+  border:1px solid var(--line);border-radius:14px;padding:1rem;
+  font:500 1rem var(--sans);cursor:pointer;transition:.2s;
+}
+.eco-option:hover:not(:disabled){border-color:var(--moss);background:rgba(143,209,138,.12)}
+.eco-option:disabled{cursor:default;opacity:1}
+.eco-option.correct{border-color:#8fd18a;background:rgba(143,209,138,.18)}
+.eco-option.wrong{border-color:#e6a18c;background:rgba(230,161,140,.14)}
+.eco-feedback{min-height:3rem;color:var(--soft);margin:1rem 0}
+.eco-actions{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.eco-result{font:700 clamp(1.8rem,5vw,3rem) var(--serif);color:var(--moss)}
+.eco-small{font-size:.9rem;color:var(--soft)}
+@media(max-width:560px){.eco-options{grid-template-columns:1fr}.eco-top{align-items:flex-start}}
+
+</style>
+</head>
+
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<header>
+  <strong>DFP Education</strong>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#proyecto">Proyecto</a>
+    <a href="#impacto">Impacto</a>
+    <a href="#eco-challenge">Eco Challenge</a>
+    <a href="#productos">Productos</a>
+    <a href="#aplicaciones">Aplicaciones</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="inicio" class="hero">
+  <span class="tag">PROYECTO DE CIENCIAS</span>
+  <h1>Una gota de aceite puede cambiarlo todo.</h1>
+  <p>
+    Bienvenido a DFP Education. Conoce nuestro proyecto educativo
+    sobre el reciclaje de aceites usados y la importancia de proteger
+    el agua y el medio ambiente.
+  </p>
+  <a href="#proyecto" class="btn">Conocer el proyecto</a>
+
+  <div class="hills" aria-hidden="true">
+    <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
+      <path d="M0 170 C150 90 300 120 450 160 S750 200 900 130 1100 90 1200 140 V300 H0Z" fill="#14402f" opacity=".75"/>
+    </svg>
+    <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
+      <path d="M0 220 C200 160 380 230 600 200 S1000 150 1200 210 V300 H0Z" fill="#0f3325" opacity=".92"/>
+    </svg>
+    <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
+      <path d="M0 260 C250 230 450 280 700 255 S1050 235 1200 262 V300 H0Z" fill="#0a251b"/>
+    </svg>
+  </div>
+</section>
+
+<section id="proyecto">
+  <div class="wrap">
+    <h2>Nuestro proyecto de ciencias</h2>
+    <p class="lead">
+      El proyecto busca promover la recolección y el aprovechamiento
+      responsable del aceite de cocina usado, evitando que termine
       contaminando el medio ambiente.
     </p>
 
@@ -112,6 +412,7 @@ responsable del aceite de cocina usado, evitando que termine
     </div>
   </div>
 </section>
+
 
 <section id="eco-challenge">
   <div class="wrap">
@@ -295,3 +596,289 @@ responsable del aceite de cocina usado, evitando que termine
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 
 <script>
+(function(){
+  /* Fondo dinámico */
+  var stops=[
+    [11,31,26],
+    [18,60,46],
+    [24,84,66],
+    [18,72,92],
+    [12,44,70],
+    [34,44,28]
+  ];
+
+  function lerp(a,b,t){return a+(b-a)*t}
+
+  function bg(){
+    var max=document.documentElement.scrollHeight-innerHeight;
+    var p=max>0?scrollY/max:0;
+    var x=p*(stops.length-1);
+    var i=Math.min(Math.floor(x),stops.length-2);
+    var t=x-i;
+    var a=stops[i],b=stops[i+1];
+
+    document.body.style.background='rgb('+[0,1,2]
+      .map(function(k){
+        return Math.round(lerp(a[k],b[k],t));
+      }).join(',')+')';
+  }
+
+  addEventListener('scroll',bg,{passive:true});
+  addEventListener('resize',bg);
+  bg();
+
+  /* Animación de hojas y luciérnagas */
+  var cv=document.getElementById('fx');
+  var cx=cv.getContext('2d');
+  var W,H,P=[],mx=.5;
+
+  var calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function size(){
+    var d=devicePixelRatio||1;
+    W=cv.width=innerWidth*d;
+    H=cv.height=innerHeight*d;
+    cv.dpr=d;
+  }
+
+  size();
+  addEventListener('resize',size);
+
+  addEventListener('pointermove',function(e){
+    mx=e.clientX/innerWidth;
+  });
+
+  var cols=['#8fd18a','#b6e08a','#d9c76a','#6fbf7a'];
+
+  function mk(){
+    var leaf=Math.random()<.7;
+    return {
+      x:Math.random()*W,
+      y:Math.random()*H,
+      r:(leaf?5:2)*cv.dpr*(.6+Math.random()),
+      vy:(.25+Math.random()*.6)*cv.dpr,
+      ph:Math.random()*6.28,
+      sp:.004+Math.random()*.01,
+      rot:Math.random()*6.28,
+      leaf:leaf,
+      c:cols[Math.floor(Math.random()*cols.length)]
+    };
+  }
+
+  for(var i=0;i<(calm?20:70);i++)P.push(mk());
+
+  function draw(t){
+    cx.clearRect(0,0,W,H);
+
+    P.forEach(function(p){
+      p.ph+=p.sp;
+      p.rot+=.01;
+      p.y+=(p.leaf?p.vy:-p.vy*.25);
+      p.x+=Math.sin(p.ph*3)*.6*cv.dpr+(mx-.5)*1.4*cv.dpr;
+
+      if(p.y>H+20){p.y=-20;p.x=Math.random()*W}
+      if(p.y<-20){p.y=H+20}
+      if(p.x<-20)p.x=W+20;
+      if(p.x>W+20)p.x=-20;
+
+      cx.save();
+      cx.translate(p.x,p.y);
+
+      if(p.leaf){
+        cx.rotate(p.rot);
+        cx.globalAlpha=.55;
+        cx.fillStyle=p.c;
+        cx.beginPath();
+        cx.ellipse(0,0,p.r,p.r*.45,0,0,6.28);
+        cx.fill();
+      }else{
+        var g=.4+.6*Math.abs(Math.sin(t/900+p.ph));
+        cx.globalAlpha=g*.8;
+        cx.shadowColor='#ffe98a';
+        cx.shadowBlur=12*cv.dpr;
+        cx.fillStyle='#fff3b0';
+        cx.beginPath();
+        cx.arc(0,0,p.r,0,6.28);
+        cx.fill();
+      }
+
+      cx.restore();
+    });
+
+    if(!calm)requestAnimationFrame(draw);
+  }
+
+  requestAnimationFrame(draw);
+})();
+
+/* Generador automático de QR */
+(function(){
+  var plate=document.getElementById('qrPlate');
+  var urlEl=document.getElementById('qrUrl');
+  var copyBtn=document.getElementById('qrCopy');
+  var status=document.getElementById('qrStatus');
+
+  if(!plate||!urlEl||!copyBtn||!status)return;
+
+  var appUrl=window.location.href.split('#')[0];
+  urlEl.textContent=appUrl;
+
+  try{
+    if(typeof qrcode!=='function'){
+      throw new Error('La librería QR no está disponible.');
+    }
+
+    var qr=qrcode(0,'M');
+    qr.addData(appUrl);
+    qr.make();
+
+    plate.innerHTML=qr.createSvgTag(4,2);
+
+    var svg=plate.querySelector('svg');
+
+    if(svg){
+      svg.setAttribute('role','img');
+      svg.setAttribute('aria-label','Código QR para abrir DFP Education');
+      svg.setAttribute('shape-rendering','crispEdges');
+    }
+  }catch(error){
+    plate.textContent='No se pudo generar el QR. Comprueba tu conexión.';
+    status.textContent='Puedes utilizar el enlace mostrado.';
+  }
+
+  copyBtn.addEventListener('click',function(){
+    if(navigator.clipboard&&window.isSecureContext){
+      navigator.clipboard.writeText(appUrl).then(function(){
+        status.textContent='¡Enlace copiado!';
+      }).catch(function(){
+        status.textContent='No se pudo copiar el enlace.';
+      });
+    }else{
+      status.textContent='Selecciona el enlace para copiarlo.';
+      var range=document.createRange();
+      range.selectNodeContents(urlEl);
+      var selection=window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  });
+})();
+
+/* ECO CHALLENGE: cuestionario educativo */
+(function(){
+  var questions = [
+    {q:"¿Qué debes hacer con el aceite de cocina usado?",o:["Tirarlo por el fregadero","Guardarlo en un recipiente adecuado","Echarlo al suelo","Mezclarlo con agua"],a:1,why:"Lo adecuado es dejarlo enfriar y guardarlo en un recipiente cerrado para su recolección."},
+    {q:"¿Por qué no debemos verter aceite usado por el desagüe?",o:["Puede contribuir a obstrucciones y contaminación","Limpia las tuberías","Se convierte en agua","No tiene ningún efecto"],a:0,why:"El aceite puede causar problemas en las tuberías y dificultar el tratamiento de aguas residuales."},
+    {q:"¿Qué tipo de recipiente conviene usar para almacenarlo?",o:["Un vaso abierto","Una bolsa de papel","Una botella o envase limpio con tapa","Un recipiente roto"],a:2,why:"Un envase resistente, limpio y con tapa ayuda a evitar derrames."},
+    {q:"¿Qué debes hacer antes de guardar el aceite usado?",o:["Dejarlo enfriar","Añadirle jabón","Calentarlo otra vez","Mezclarlo con productos químicos"],a:0,why:"Es importante dejar que el aceite se enfríe antes de manipularlo y almacenarlo."},
+    {q:"¿Qué significa reciclar o aprovechar un residuo?",o:["Abandonarlo en la calle","Darle un manejo adecuado para reducir desperdicios","Quemarlo sin control","Tirarlo en cualquier lugar"],a:1,why:"El aprovechamiento responsable busca reducir residuos y darles un destino apropiado."},
+    {q:"¿Quién puede ayudar a recolectar aceite usado?",o:["Solo los científicos","Solo las empresas grandes","Estudiantes, familias y comunidad","Nadie"],a:2,why:"La participación de toda la comunidad ayuda a impulsar la educación ambiental."},
+    {q:"¿Qué debes hacer si se derrama aceite?",o:["Dejarlo allí","Avisar a un adulto y limpiarlo de forma segura","Echarle más agua","Empujarlo hacia el desagüe"],a:1,why:"Pide ayuda a un adulto y evita que el aceite llegue a los desagües."},
+    {q:"¿Cuál es una buena práctica ambiental?",o:["Verter residuos en ríos","Tirar aceite en el patio","Separar y entregar el aceite usado a un sistema de recolección","Mezclar todos los residuos"],a:2,why:"Separarlo y entregarlo a un sistema de recolección permite un manejo más responsable."},
+    {q:"¿Qué promueve la economía circular?",o:["Usar y desechar todo rápidamente","Aprovechar materiales y reducir residuos","Aumentar la basura","Desperdiciar recursos"],a:1,why:"La economía circular busca mantener los materiales en uso y reducir los residuos."},
+    {q:"¿Cuál es el objetivo principal de este proyecto?",o:["Promover la recolección responsable del aceite usado","Enseñar a tirar aceite al fregadero","Producir más residuos","Contaminar menos solo por un día"],a:0,why:"El proyecto promueve la educación ambiental y el manejo responsable del aceite de cocina usado."}
+  ];
+
+  var index=0, score=0, answered=false;
+  var recordKey="dfp_education_eco_challenge_record";
+  var number=document.getElementById("ecoQuestionNumber");
+  var scoreEl=document.getElementById("ecoScore");
+  var recordEl=document.getElementById("ecoRecord");
+  var progress=document.getElementById("ecoProgress");
+  var category=document.getElementById("ecoCategory");
+  var question=document.getElementById("ecoQuestion");
+  var options=document.getElementById("ecoOptions");
+  var feedback=document.getElementById("ecoFeedback");
+  var next=document.getElementById("ecoNext");
+  var playArea=document.getElementById("ecoPlayArea");
+  var finalArea=document.getElementById("ecoFinal");
+  var finalScore=document.getElementById("ecoFinalScore");
+  var finalMessage=document.getElementById("ecoFinalMessage");
+  var restart=document.getElementById("ecoRestart");
+
+  if(!number||!scoreEl||!recordEl||!progress||!question||!options||!next)return;
+
+  var record=0;
+  try{record=Number(localStorage.getItem(recordKey))||0;}catch(e){}
+  recordEl.textContent=record;
+
+  function render(){
+    answered=false;
+    var item=questions[index];
+    number.textContent=(index+1)+"/"+questions.length;
+    scoreEl.textContent=score;
+    progress.style.width=(index/questions.length*100)+"%";
+    category.textContent="RETO AMBIENTAL · PREGUNTA "+(index+1);
+    question.textContent=item.q;
+    feedback.textContent="Elige una respuesta para continuar.";
+    options.textContent="";
+    next.disabled=true;
+    next.textContent=index===questions.length-1?"Ver resultado":"Siguiente pregunta";
+
+    item.o.forEach(function(optionText,i){
+      var button=document.createElement("button");
+      button.type="button";
+      button.className="eco-option";
+      button.textContent=String.fromCharCode(65+i)+". "+optionText;
+      button.addEventListener("click",function(){choose(i);});
+      options.appendChild(button);
+    });
+  }
+
+  function choose(choice){
+    if(answered)return;
+    answered=true;
+    var item=questions[index];
+    var buttons=options.querySelectorAll("button");
+    buttons.forEach(function(button,i){
+      button.disabled=true;
+      if(i===item.a)button.classList.add("correct");
+      if(i===choice&&choice!==item.a)button.classList.add("wrong");
+    });
+    if(choice===item.a){
+      score+=10;
+      scoreEl.textContent=score;
+      feedback.textContent="¡Correcto! "+item.why;
+    }else{
+      feedback.textContent="No es esa opción. "+item.why;
+    }
+    next.disabled=false;
+  }
+
+  function finish(){
+    progress.style.width="100%";
+    playArea.hidden=true;
+    finalArea.hidden=false;
+    finalScore.textContent=score+"/100 puntos";
+    if(score===100)finalMessage.textContent="¡Excelente! Dominas estos hábitos de cuidado ambiental.";
+    else if(score>=70)finalMessage.textContent="¡Muy buen trabajo! Sigue aprendiendo y compartiendo lo que sabes.";
+    else if(score>=40)finalMessage.textContent="Vas por buen camino. Repasa las explicaciones y vuelve a intentarlo.";
+    else finalMessage.textContent="Cada reto es una oportunidad para aprender. ¡Inténtalo otra vez!";
+    if(score>record){
+      record=score;
+      recordEl.textContent=record;
+      try{localStorage.setItem(recordKey,String(record));}catch(e){}
+      finalMessage.textContent+=" ¡Nuevo récord!";
+    }
+  }
+
+  next.addEventListener("click",function(){
+    if(!answered)return;
+    if(index<questions.length-1){index++;render();}
+    else finish();
+  });
+
+  restart.addEventListener("click",function(){
+    index=0;score=0;
+    playArea.hidden=false;
+    finalArea.hidden=true;
+    render();
+  });
+
+  render();
+})();
+
+</script>
+
+</body>
+</html>
