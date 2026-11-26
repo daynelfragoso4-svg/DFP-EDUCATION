@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,15 +7,11 @@
 <meta name="theme-color" content="#0b1f1a">
 <title>DFP Education | Reciclaje de aceites</title>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Figtree:wght@400;500;600&display=swap">
+<link rel="icon" type="image/png" href="favicon-dfp-education.png">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Figtree:wght@400;500;600;700;800&display=swap">
 
 <style>
-
-/* =========================================
-   DFP EDUCATION - DISEÑO VERDE Y BLANCO
-   Versión mejorada
-========================================= */
-
 :root {
   --ink: #173b2b;
   --soft: #607568;
@@ -30,13 +26,9 @@
   --serif: "Fraunces", serif;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -62,10 +54,18 @@ header {
   backdrop-filter: blur(12px);
 }
 
-header strong {
-  color: var(--moss);
-  font-size: 1.4rem;
-  white-space: nowrap;
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 125px;
+  height: 75px;
+  object-fit: contain;
+  display: block;
 }
 
 nav {
@@ -80,17 +80,33 @@ nav a {
   color: var(--ink);
   text-decoration: none;
   font-size: .92rem;
-  font-weight: 600;
+  font-weight: 700;
   transition: color .2s ease;
 }
 
-nav a:hover {
-  color: var(--moss);
+nav a:hover { color: var(--moss); }
+
+.admin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #e8f5e9;
+  color: #176b3a;
+  border: 1px solid #b7dfc2;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: .25s ease;
 }
 
-section {
-  scroll-margin-top: 90px;
+.admin-link:hover {
+  background: #176b3a;
+  color: white;
+  transform: translateY(-2px);
 }
+
+section { scroll-margin-top: 90px; }
 
 .hero {
   min-height: 620px;
@@ -105,10 +121,7 @@ section {
   border-radius: 0 0 35px 35px;
 }
 
-.hero > * {
-  position: relative;
-  z-index: 2;
-}
+.hero > * { position: relative; z-index: 2; }
 
 .hero h1 {
   max-width: 850px;
@@ -132,7 +145,7 @@ section {
   margin-top: 18px;
   color: var(--moss);
   font-size: .78rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1px;
 }
 
@@ -164,10 +177,14 @@ section {
   border-radius: 18px;
 }
 
-.layer h3,
-.app h3 {
+.layer h3, .app h3 {
   color: #17452e;
   font-family: var(--serif);
+}
+
+.layer p, .app p {
+  color: var(--soft);
+  line-height: 1.75;
 }
 
 .apps {
@@ -177,9 +194,7 @@ section {
   margin-top: 2rem;
 }
 
-.app,
-.eco-game,
-.qr-card {
+.app, .eco-game {
   min-width: 0;
   padding: 2rem;
   background: var(--panel);
@@ -192,12 +207,6 @@ section {
 .app:hover {
   transform: translateY(-5px);
   box-shadow: 0 18px 40px rgba(25,70,40,.12);
-}
-
-.app p,
-.layer p {
-  color: var(--soft);
-  line-height: 1.75;
 }
 
 .btn {
@@ -213,6 +222,7 @@ section {
   border-radius: 12px;
   cursor: pointer;
   transition: .2s ease;
+  font-family: inherit;
 }
 
 .btn:hover {
@@ -225,9 +235,7 @@ section {
   color: var(--moss);
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
   width: 100%;
   min-width: 0;
   padding: .9rem 1rem;
@@ -239,9 +247,7 @@ textarea {
   transition: border-color .2s ease, box-shadow .2s ease;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--moss);
   box-shadow: 0 0 0 3px rgba(38,122,69,.12);
@@ -252,7 +258,116 @@ label {
   font-weight: 600;
 }
 
-/* FORMULARIO DE RECOLECCIÓN */
+/* QR ADMINISTRATIVO SUPERIOR */
+
+.admin-qr-section {
+  width: min(1050px, 90%);
+  margin: 4rem auto;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background: linear-gradient(135deg, #e8f4e9, #ffffff);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.admin-qr-info {
+  flex: 1;
+  min-width: 240px;
+}
+
+.admin-qr-info .eyebrow {
+  color: #b27624;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.admin-qr-info h2 {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.admin-qr-info p, .admin-qr-info strong {
+  line-height: 1.7;
+}
+
+.admin-qr-card {
+  width: 230px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .7rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+#adminQrCode {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#adminQrCode img {
+  display: block;
+  width: 170px;
+  max-width: 100%;
+  height: auto;
+}
+
+.admin-qr-card span {
+  color: var(--moss);
+  font-weight: 800;
+}
+
+.admin-qr-card small {
+  color: var(--soft);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* QR DE LA APLICACIÓN */
+
+.qr-plate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 190px;
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.qr-plate svg {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+}
+
+.qr-url {
+  overflow-wrap: anywhere;
+  font-size: .85rem;
+}
+
+.qr-status {
+  min-height: 1.2rem;
+  color: var(--moss);
+  font-weight: 700;
+}
+
+/* FORMULARIO */
 
 #donaciones .app {
   max-width: 850px;
@@ -316,39 +431,15 @@ label {
   font-weight: 700;
 }
 
-/* QR */
-
-.qr-plate {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  background: white;
-  border-radius: 14px;
-}
-
-.qr-plate svg {
-  max-width: 100%;
-  height: auto;
-}
-
-.qr-url {
-  overflow-wrap: anywhere;
-}
-
-
-/* =========================================
-   ECO CHALLENGE - DISEÑO PREMIUM
-========================================= */
+/* ECO CHALLENGE */
 
 .eco-game {
   max-width: 850px;
   margin: 2.5rem auto;
   padding: clamp(1.4rem, 4vw, 2.8rem);
-  background: #ffffff;
-  border: 1px solid #e1eae2;
+  background: white;
   border-radius: 26px;
-  box-shadow: 0 18px 55px rgba(23, 59, 43, .09);
+  box-shadow: 0 18px 55px rgba(23,59,43,.09);
 }
 
 .eco-top {
@@ -361,15 +452,23 @@ label {
   border-bottom: 1px solid #edf2ed;
 }
 
-.eco-top strong {
-  color: #17452e;
-  font-size: 1.05rem;
+.eco-stat {
+  flex: 1;
+  min-width: 110px;
+  padding: 1rem;
+  background: #f2f8f2;
+  border: 1px solid #e0ebe1;
+  border-radius: 14px;
+  color: var(--soft);
+  font-size: .9rem;
+  text-align: center;
 }
 
-.eco-small {
-  color: #607568;
-  font-size: .92rem;
-  line-height: 1.6;
+.eco-stat strong {
+  display: block;
+  margin-top: .35rem;
+  color: #176b42;
+  font-size: 1.5rem;
 }
 
 .eco-progress {
@@ -389,6 +488,18 @@ label {
   transition: width .4s ease;
 }
 
+.eco-category, #ecoCategory {
+  display: inline-block;
+  margin: 1.8rem 0 .8rem;
+  padding: .5rem .9rem;
+  color: #267a45;
+  background: #e8f4e9;
+  border-radius: 30px;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
 .eco-game h3 {
   margin: 0 0 1.8rem;
   color: #173b2b;
@@ -405,7 +516,6 @@ label {
 }
 
 .eco-option {
-  position: relative;
   width: 100%;
   min-height: 66px;
   padding: 1.1rem 1.3rem;
@@ -422,17 +532,13 @@ label {
   font-weight: 600;
   line-height: 1.5;
   cursor: pointer;
-  transition: border-color .2s ease,
-              background .2s ease,
-              transform .2s ease,
-              box-shadow .2s ease;
+  transition: .2s ease;
 }
 
 .eco-option:hover:not(:disabled) {
   background: #eff8f0;
   border-color: #398653;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(38, 122, 69, .08);
 }
 
 .eco-option.correct {
@@ -452,6 +558,17 @@ label {
   opacity: 1;
 }
 
+.eco-feedback {
+  min-height: 48px;
+  margin: 1.4rem 0 .5rem;
+  padding: 1rem;
+  color: #486452;
+  background: #f5f8f5;
+  border: 1px solid #e4ece5;
+  border-radius: 12px;
+  line-height: 1.6;
+}
+
 .eco-actions {
   display: flex;
   align-items: center;
@@ -461,34 +578,143 @@ label {
   margin-top: 2rem;
 }
 
-.eco-actions .btn {
-  min-width: 155px;
+.eco-actions .btn { min-width: 155px; }
+
+.eco-small {
+  color: var(--soft);
+  font-size: .92rem;
+  line-height: 1.6;
 }
 
-.eco-small strong {
+.eco-small strong { color: var(--moss); }
+
+#ecoFinal {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+#ecoFinal .eco-small {
   color: #267a45;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
-.eco-game [hidden] {
-  display: none !important;
+.eco-result, #ecoFinalScore {
+  margin: 1.5rem auto;
+  color: #176b42;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
 }
 
-/* RESPONSIVE ECO CHALLENGE */
+#ecoFinalMessage {
+  max-width: 600px;
+  margin: 1rem auto 2rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.eco-game [hidden] { display: none !important; }
+
+@keyframes ecoAppear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FONDO Y FOOTER */
+
+#fx {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .18;
+}
+
+main, footer, header { position: relative; }
+main { z-index: 1; }
+
+footer {
+  padding: 3rem 1rem;
+  background: #143b29;
+  color: white;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav { justify-content: flex-start; }
+}
+
+@media (max-width: 720px) {
+  .brand img {
+    width: 110px;
+    height: 65px;
+  }
+}
 
 @media (max-width: 600px) {
+  .apps { grid-template-columns: 1fr; }
+
+  .hero {
+    min-height: 540px;
+    padding: 6rem 1.4rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+
+  .wrap { padding: 4rem 1.2rem; }
+
+  .admin-qr-section {
+    padding: 1.5rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .admin-qr-card {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  #donaciones .app { padding: 1.3rem; }
+
+  #donationForm { grid-template-columns: 1fr; }
+
+  #donationForm label,
+  #donationForm input,
+  #donationForm select,
+  #donationForm textarea,
+  #donationForm button,
+  #donationMessage {
+    grid-column: 1;
+  }
+
   .eco-game {
     margin: 1.5rem auto;
     padding: 1.3rem;
     border-radius: 19px;
   }
 
-  .eco-top {
-    align-items: flex-start;
+  .eco-stat {
+    min-width: 85px;
+    padding: .8rem .5rem;
+    font-size: .8rem;
   }
 
-  .eco-game h3 {
-    font-size: 1.35rem;
-  }
+  .eco-stat strong { font-size: 1.25rem; }
 
   .eco-option {
     min-height: 60px;
@@ -501,257 +727,26 @@ label {
     flex-direction: column;
   }
 
-  .eco-actions .btn {
-    width: 100%;
+  .eco-actions .btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
   }
-}
-
-/* =========================================
-   ECO CHALLENGE - EXPERIENCIA DE JUEGO
-========================================= */
-
-.eco-stat {
-  flex: 1;
-  min-width: 110px;
-  padding: 1rem;
-  background: #f2f8f2;
-  border: 1px solid #e0ebe1;
-  border-radius: 14px;
-  color: #607568;
-  font-size: .9rem;
-  text-align: center;
-}
-
-.eco-stat strong {
-  display: block;
-  margin-top: .35rem;
-  color: #176b42;
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
-.eco-category,
-#ecoCategory {
-  display: inline-block;
-  margin: 1.8rem 0 .8rem;
-  padding: .5rem .9rem;
-  color: #267a45;
-  background: #e8f4e9;
-  border-radius: 30px;
-  font-size: .75rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.eco-question {
-  animation: ecoAppear .4s ease;
-}
-
-.eco-feedback {
-  min-height: 48px;
-  margin: 1.4rem 0 .5rem;
-  padding: 1rem;
-  color: #486452;
-  background: #f5f8f5;
-  border: 1px solid #e4ece5;
-  border-radius: 12px;
-  line-height: 1.6;
-}
-
-#ecoFinal {
-  padding: 2rem 1rem;
-  text-align: center;
-  animation: ecoAppear .5s ease;
-}
-
-#ecoFinal .eco-small {
-  color: #267a45;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.eco-result,
-#ecoFinalScore {
-  margin: 1.5rem auto;
-  color: #176b42;
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -2px;
-}
-
-#ecoFinalMessage {
-  max-width: 600px;
-  margin: 1rem auto 2rem;
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
-#ecoRestart {
-  min-width: 190px;
-}
-
-@keyframes ecoAppear {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 600px) {
-  .eco-stat {
-    min-width: 85px;
-    padding: .8rem .5rem;
-    font-size: .8rem;
-  }
-
-  .eco-stat strong {
-    font-size: 1.25rem;
-  }
-
-  #ecoFinal {
-    padding: 1.5rem .3rem;
-  }
-}
-
-/* FONDO Y ESTRUCTURA */
-
-#fx {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  opacity: .18;
-}
-
-main,
-footer,
-header {
-  position: relative;
-}
-
-main {
-  z-index: 1;
-}
-
-footer {
-  padding: 3rem 1rem;
-  background: #143b29;
-  color: white;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 850px) {
-  .apps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  nav {
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 600px) {
-  .apps {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    min-height: 540px;
-    padding: 6rem 1.4rem;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-    letter-spacing: -1px;
-  }
-
-  .wrap {
-    padding: 4rem 1.2rem;
-  }
-
-  #donaciones .app {
-    padding: 1.3rem;
-  }
-
-  #donationForm {
-    grid-template-columns: 1fr;
-  }
-
-  #donationForm label,
-  #donationForm input,
-  #donationForm select,
-  #donationForm textarea,
-  #donationForm button,
-  #donationMessage {
-    grid-column: 1;
-  }
-}
-.brand {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  text-decoration: none;
-}
-
-.brand img {
-  width: 125px;
-  height: 75px;
-  object-fit: contain;
-  display: block;
-}
-
-@media (max-width: 720px) {
-  .brand img {
-    width: 110px;
-    height: 65px;
-  }
-}
-
-.admin-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: #e8f5e9;
-  color: #176b3a;
-  border: 1px solid #b7dfc2;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: .25s ease;
-}
-
-.admin-link:hover {
-  background: #176b3a;
-  color: white;
-  transform: translateY(-2px);
 }
 </style>
-<link rel="icon" type="image/png" href="favicon-dfp-education.png">
 </head>
 
 <body>
+
 <canvas id="fx" aria-hidden="true"></canvas>
+
 <header>
   <a href="#inicio" class="brand">
-    <img
-      src="logo-dfp-education.png"
-      alt="DFP Education"
-    >
+    <img src="logo-dfp-education.png" alt="DFP Education">
   </a>
 
   <nav>
@@ -762,6 +757,7 @@ footer {
     <a href="#productos">Productos</a>
     <a href="#aplicaciones">Aplicaciones</a>
     <a href="#contacto">Contacto</a>
+    <a href="admin.html" class="admin-link">🔒 Panel administrativo</a>
   </nav>
 </header>
 
@@ -776,17 +772,25 @@ footer {
     el agua y el medio ambiente.
   </p>
   <a href="#proyecto" class="btn">Conocer el proyecto</a>
+</section>
 
-  <div class="hills" aria-hidden="true">
-    <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
-      <path d="M0 170 C150 90 300 120 450 160 S750 200 900 130 1100 90 1200 140 V300 H0Z" fill="#14402f" opacity=".75"/>
-    </svg>
-    <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
-      <path d="M0 220 C200 160 380 230 600 200 S1000 150 1200 210 V300 H0Z" fill="#0f3325" opacity=".92"/>
-    </svg>
-    <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
-      <path d="M0 260 C250 230 450 280 700 255 S1050 235 1200 262 V300 H0Z" fill="#0a251b"/>
-    </svg>
+<!-- QR ADMINISTRATIVO: ARRIBA -->
+
+<section class="admin-qr-section">
+  <div class="admin-qr-info">
+    <p class="eyebrow">🔒 ACCESO RESTRINGIDO</p>
+    <h2>Panel administrativo</h2>
+    <p>
+      Accede al sistema de gestión de DFP Education.
+      Escanea este código para abrir el panel administrativo.
+    </p>
+    <strong>Acceso exclusivo para personal autorizado.</strong>
+  </div>
+
+  <div class="admin-qr-card">
+    <div id="adminQrCode"></div>
+    <span>DFP EDUCATION</span>
+    <small>ACCESO ADMINISTRATIVO</small>
   </div>
 </section>
 
@@ -799,33 +803,27 @@ footer {
       contaminando el medio ambiente.
     </p>
 
-    <div class="layer forest">
-      <div>
-        <span class="n">01</span>
-        <h3>Recolección</h3>
-      </div>
+    <div class="layer">
+      <span class="n">01</span>
+      <h3>Recolección</h3>
       <p>
         Reunimos el aceite usado en recipientes adecuados para
         facilitar su almacenamiento y posterior aprovechamiento.
       </p>
     </div>
 
-    <div class="layer water">
-      <div>
-        <span class="n">02</span>
-        <h3>Educación ambiental</h3>
-      </div>
+    <div class="layer">
+      <span class="n">02</span>
+      <h3>Educación ambiental</h3>
       <p>
         Informamos a estudiantes y familias sobre los efectos
         de desechar incorrectamente el aceite de cocina.
       </p>
     </div>
 
-    <div class="layer air">
-      <div>
-        <span class="n">03</span>
-        <h3>Reutilización responsable</h3>
-      </div>
+    <div class="layer">
+      <span class="n">03</span>
+      <h3>Reutilización responsable</h3>
       <p>
         Exploramos alternativas educativas para aprovechar
         el aceite recolectado mediante procesos apropiados y seguros.
@@ -843,11 +841,8 @@ footer {
       a proteger los recursos naturales.
     </p>
 
-    <div class="layer water">
-      <div>
-        <span class="n">Agua</span>
-        <h3>Protección de ríos</h3>
-      </div>
+    <div class="layer">
+      <h3>Protección del agua</h3>
       <p>
         Evitar que el aceite llegue a desagües y cuerpos de agua
         ayuda a reducir la contaminación y facilita el tratamiento
@@ -855,22 +850,16 @@ footer {
       </p>
     </div>
 
-    <div class="layer forest">
-      <div>
-        <span class="n">Suelo</span>
-        <h3>Cuidado de los ecosistemas</h3>
-      </div>
+    <div class="layer">
+      <h3>Cuidado de los ecosistemas</h3>
       <p>
         Una disposición responsable evita que los residuos
         se acumulen en lugares inadecuados y afecten el entorno.
       </p>
     </div>
 
-    <div class="layer air">
-      <div>
-        <span class="n">CO₂</span>
-        <h3>Consumo responsable</h3>
-      </div>
+    <div class="layer">
+      <h3>Consumo responsable</h3>
       <p>
         La reutilización y el aprovechamiento de materiales
         pueden contribuir a reducir residuos y fomentar
@@ -910,35 +899,58 @@ footer {
   </div>
 </section>
 
-
 <section id="eco-challenge">
   <div class="wrap">
     <span class="tag">JUEGO EDUCATIVO</span>
     <h2>Eco Challenge</h2>
-    <p class="lead">Pon a prueba lo que sabes sobre el reciclaje del aceite usado. Responde 10 preguntas y suma puntos por cada respuesta correcta.</p>
+    <p class="lead">
+      Pon a prueba lo que sabes sobre el reciclaje del aceite usado.
+      Responde 10 preguntas y suma puntos por cada respuesta correcta.
+    </p>
 
     <div class="eco-game">
       <div class="eco-top">
-        <div class="eco-stat">Pregunta: <strong id="ecoQuestionNumber">1/10</strong></div>
-        <div class="eco-stat">Puntos: <strong id="ecoScore">0</strong></div>
-        <div class="eco-stat">Récord: <strong id="ecoRecord">0</strong></div>
+        <div class="eco-stat">
+          Pregunta:
+          <strong id="ecoQuestionNumber">1/10</strong>
+        </div>
+        <div class="eco-stat">
+          Puntos:
+          <strong id="ecoScore">0</strong>
+        </div>
+        <div class="eco-stat">
+          Récord:
+          <strong id="ecoRecord">0</strong>
+        </div>
       </div>
-      <div class="eco-progress" aria-label="Progreso del juego"><span id="ecoProgress"></span></div>
+
+      <div class="eco-progress">
+        <span id="ecoProgress"></span>
+      </div>
+
       <div id="ecoPlayArea">
         <p class="eco-small" id="ecoCategory">RETO AMBIENTAL</p>
-        <h3 class="eco-question" id="ecoQuestion">¿Qué debes hacer con el aceite de cocina usado?</h3>
+        <h3 id="ecoQuestion">¿Qué debes hacer con el aceite de cocina usado?</h3>
         <div class="eco-options" id="ecoOptions"></div>
-        <p class="eco-feedback" id="ecoFeedback" aria-live="polite">Elige una respuesta para continuar.</p>
+        <p class="eco-feedback" id="ecoFeedback" aria-live="polite">
+          Elige una respuesta para continuar.
+        </p>
+
         <div class="eco-actions">
-          <button class="btn" id="ecoNext" type="button" disabled>Siguiente pregunta</button>
+          <button class="btn" id="ecoNext" type="button" disabled>
+            Siguiente pregunta
+          </button>
           <span class="eco-small">Cada respuesta correcta vale 10 puntos.</span>
         </div>
       </div>
+
       <div id="ecoFinal" hidden>
         <p class="eco-small">RESULTADO FINAL</p>
         <div class="eco-result" id="ecoFinalScore">0/100 puntos</div>
         <p id="ecoFinalMessage" class="lead"></p>
-        <button class="btn" id="ecoRestart" type="button">Volver a jugar</button>
+        <button class="btn" id="ecoRestart" type="button">
+          Volver a jugar
+        </button>
       </div>
     </div>
   </div>
@@ -972,11 +984,9 @@ footer {
   </div>
 </section>
 
-
 <section id="donaciones">
   <div class="wrap">
     <h2>Solicita la recogida de aceite usado</h2>
-
     <p class="lead">
       Contribuye al cuidado del medio ambiente.
       Registra tu solicitud y el equipo de DFP Education
@@ -987,14 +997,8 @@ footer {
       <h3>Formulario de recolección</h3>
 
       <form id="donationForm">
-
         <label for="donorName">Nombre o institución</label>
-        <input
-          type="text"
-          id="donorName"
-          required
-          placeholder="Escribe tu nombre"
-        >
+        <input type="text" id="donorName" required placeholder="Escribe tu nombre">
 
         <label for="donorType">Tipo de participante</label>
         <select id="donorType" required>
@@ -1006,73 +1010,44 @@ footer {
         </select>
 
         <label for="donorPhone">Número de contacto</label>
-        <input
-          type="tel"
-          id="donorPhone"
-          required
-          placeholder="Tu número de teléfono"
-        >
+        <input type="tel" id="donorPhone" required placeholder="Tu número de teléfono">
 
         <label for="donorLocation">Ubicación</label>
-        <input
-          type="text"
-          id="donorLocation"
-          required
-          placeholder="Sector, municipio o dirección"
-        >
+        <input type="text" id="donorLocation" required placeholder="Sector, municipio o dirección">
 
         <label for="oilQuantity">Cantidad aproximada de aceite (litros)</label>
-        <input
-          type="number"
-          id="oilQuantity"
-          min="1"
-          step="0.5"
-          required
-          placeholder="Ejemplo: 5"
-        >
+        <input type="number" id="oilQuantity" min="1" step="0.5" required placeholder="Ejemplo: 5">
 
         <label for="collectionDate">Fecha disponible para la recogida</label>
-        <input
-          type="date"
-          id="collectionDate"
-          required
-        >
+        <input type="date" id="collectionDate" required>
 
         <label for="donorMessage">Observaciones adicionales</label>
-        <textarea
-          id="donorMessage"
-          rows="4"
-          placeholder="Información adicional..."
-        ></textarea>
+        <textarea id="donorMessage" rows="4" placeholder="Información adicional..."></textarea>
 
-        <button type="submit">
-          Enviar solicitud
-        </button>
-
+        <button type="submit">Enviar solicitud</button>
         <p id="donationMessage" aria-live="polite"></p>
-
       </form>
 
-      <span class="tag">
-        Solicitud sujeta a confirmación
-      </span>
+      <span class="tag">Solicitud sujeta a confirmación</span>
     </div>
   </div>
 </section>
 
-
 <section id="beneficios">
   <div class="wrap">
     <h2>Beneficios ambientales</h2>
+
     <div class="apps">
       <article class="app">
         <h3>Menos contaminación</h3>
         <p>Promueve la disposición correcta del aceite usado.</p>
       </article>
+
       <article class="app">
         <h3>Más educación</h3>
         <p>Fomenta hábitos responsables en la comunidad educativa.</p>
       </article>
+
       <article class="app">
         <h3>Economía circular</h3>
         <p>Promueve el aprovechamiento responsable de los residuos.</p>
@@ -1080,6 +1055,8 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- APLICACIONES Y QR DE LA APP -->
 
 <section id="aplicaciones">
   <div class="wrap">
@@ -1090,6 +1067,7 @@ footer {
     </p>
 
     <div class="apps">
+
       <article class="app">
         <span class="tag">PLATAFORMA EDUCATIVA</span>
         <h3>EscoSoft</h3>
@@ -1114,21 +1092,26 @@ footer {
       </article>
 
       <article class="app qr-card" id="qr">
+        <span class="tag">APLICACIÓN MÓVIL</span>
         <h3>DFP Education en tu celular</h3>
         <p>
           Escanea este código QR con la cámara de tu teléfono
-          para abrir la plataforma.
+          para abrir la aplicación de reciclaje de aceite.
         </p>
+
         <div class="qr-plate" id="qrPlate"
-             role="img" aria-label="Código QR de DFP Education"></div>
-        <p class="qr-url" id="qrUrl"></p>
-        <div>
-          <button class="btn ghost" id="qrCopy" type="button">
-            Copiar enlace
-          </button>
-          <p class="qr-status" id="qrStatus" role="status"></p>
+             role="img" aria-label="Código QR de DFP Education">
         </div>
+
+        <p class="qr-url" id="qrUrl"></p>
+
+        <button class="btn ghost" id="qrCopy" type="button">
+          Copiar enlace
+        </button>
+
+        <p class="qr-status" id="qrStatus" role="status"></p>
       </article>
+
     </div>
   </div>
 </section>
@@ -1155,34 +1138,27 @@ footer {
 
 </main>
 
-
 <footer>
   <p>© 2026 DFP Education | Proyecto educativo</p>
   <p>Desarrollado con HTML, CSS y JavaScript</p>
 </footer>
 
-<!-- LIBRERÍAS EXTERNAS -->
+<!-- LIBRERÍAS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 /* =====================================
-   DFP EDUCATION - CONEXIÓN SUPABASE
+   SUPABASE
 ===================================== */
 
-// IMPORTANTE: utiliza la URL raíz, sin /rest/v1/
 const SUPABASE_URL = "https://ytoyzrwmmuqeeupqugik.supabase.co";
-
-// Pega aquí tu clave publishable o anon.
-// No uses nunca la clave service_role.
 const SUPABASE_KEY = "sb_publishable_qcocZrQ5wDFU6L5No2j6JQ_JGOjMc7T";
 
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
-
-console.log("Supabase conectado:", typeof supabaseClient);
 
 const donationForm = document.getElementById("donationForm");
 const donationMessage = document.getElementById("donationMessage");
@@ -1210,10 +1186,8 @@ if (donationForm && donationMessage) {
 
     if (error) {
       console.error("Error de Supabase:", error);
-
       donationMessage.textContent =
         "No se pudo enviar la solicitud. Inténtalo más tarde.";
-
       return;
     }
 
@@ -1224,13 +1198,98 @@ if (donationForm && donationMessage) {
   });
 }
 
+/* =====================================
+   GENERADOR DE LOS DOS QR
+===================================== */
+
+(function() {
+  if (typeof qrcode !== "function") {
+    console.error("No se pudo cargar la librería QR.");
+    const admin = document.getElementById("adminQrCode");
+    const app = document.getElementById("qrPlate");
+
+    if (admin) admin.textContent = "QR no disponible.";
+    if (app) app.textContent = "QR no disponible.";
+    return;
+  }
+
+  function createQR(container, url, useSVG) {
+    if (!container) return;
+
+    try {
+      const qr = qrcode(0, "M");
+      qr.addData(url);
+      qr.make();
+
+      if (useSVG) {
+        container.innerHTML = qr.createSvgTag(4, 2);
+        const svg = container.querySelector("svg");
+
+        if (svg) {
+          svg.setAttribute("role", "img");
+          svg.setAttribute("aria-label", "Código QR para abrir DFP Education");
+          svg.setAttribute("shape-rendering", "crispEdges");
+        }
+      } else {
+        container.innerHTML = qr.createImgTag(5, 10);
+      }
+    } catch (error) {
+      console.error("Error generando QR:", error);
+      container.textContent = "No se pudo generar el código QR.";
+    }
+  }
+
+  const appUrl = window.location.origin +
+    window.location.pathname;
+
+  const adminUrl = new URL("admin.html", window.location.href).href;
+
+  createQR(
+    document.getElementById("adminQrCode"),
+    adminUrl,
+    false
+  );
+
+  createQR(
+    document.getElementById("qrPlate"),
+    appUrl,
+    true
+  );
+
+  const urlEl = document.getElementById("qrUrl");
+  const copyBtn = document.getElementById("qrCopy");
+  const status = document.getElementById("qrStatus");
+
+  if (urlEl) urlEl.textContent = appUrl;
+
+  if (copyBtn && status) {
+    copyBtn.addEventListener("click", function() {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(appUrl)
+          .then(function() {
+            status.textContent = "¡Enlace copiado!";
+          })
+          .catch(function() {
+            status.textContent = "No se pudo copiar el enlace.";
+          });
+      } else {
+        status.textContent = "Selecciona el enlace para copiarlo.";
+        const range = document.createRange();
+        range.selectNodeContents(urlEl);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+    });
+  }
+})();
 
 /* =====================================
    FONDO DINÁMICO Y ANIMACIÓN
 ===================================== */
 
-(function(){
-  var stops=[
+(function() {
+  const stops = [
     [11,31,26],
     [18,60,46],
     [24,84,66],
@@ -1239,54 +1298,53 @@ if (donationForm && donationMessage) {
     [34,44,28]
   ];
 
-  function lerp(a,b,t){return a+(b-a)*t}
-
-  function bg(){
-    var max=document.documentElement.scrollHeight-innerHeight;
-    var p=max>0?scrollY/max:0;
-    var x=p*(stops.length-1);
-    var i=Math.min(Math.floor(x),stops.length-2);
-    var t=x-i;
-    var a=stops[i],b=stops[i+1];
-
-    document.body.style.background='rgb('+[0,1,2]
-      .map(function(k){
-        return Math.round(lerp(a[k],b[k],t));
-      }).join(',')+')';
+  function lerp(a,b,t) {
+    return a + (b-a)*t;
   }
 
-  addEventListener('scroll',bg,{passive:true});
-  addEventListener('resize',bg);
+  function bg() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? scrollY/max : 0;
+    const x = p*(stops.length-1);
+    const i = Math.min(Math.floor(x),stops.length-2);
+    const t = x-i;
+    const a = stops[i], b = stops[i+1];
+
+    document.body.style.background = "rgb(" +
+      [0,1,2].map(k => Math.round(lerp(a[k],b[k],t))).join(",") +
+      ")";
+  }
+
+  addEventListener("scroll",bg,{passive:true});
+  addEventListener("resize",bg);
   bg();
 
-  /* Animación de hojas y luciérnagas */
-  var cv=document.getElementById('fx');
-
+  const cv = document.getElementById("fx");
   if (!cv) return;
 
-  var cx=cv.getContext('2d');
-  var W,H,P=[],mx=.5;
+  const cx = cv.getContext("2d");
+  let W,H,P=[],mx=.5;
 
-  var calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function size(){
-    var d=devicePixelRatio||1;
-    W=cv.width=innerWidth*d;
-    H=cv.height=innerHeight*d;
-    cv.dpr=d;
+  function size() {
+    const d = devicePixelRatio || 1;
+    W = cv.width = innerWidth*d;
+    H = cv.height = innerHeight*d;
+    cv.dpr = d;
   }
 
   size();
-  addEventListener('resize',size);
+  addEventListener("resize",size);
 
-  addEventListener('pointermove',function(e){
-    mx=e.clientX/innerWidth;
+  addEventListener("pointermove",function(e) {
+    mx = e.clientX/innerWidth;
   });
 
-  var cols=['#8fd18a','#b6e08a','#d9c76a','#6fbf7a'];
+  const cols = ["#8fd18a","#b6e08a","#d9c76a","#6fbf7a"];
 
-  function mk(){
-    var leaf=Math.random()<.7;
+  function mk() {
+    const leaf = Math.random()<.7;
 
     return {
       x:Math.random()*W,
@@ -1301,38 +1359,38 @@ if (donationForm && donationMessage) {
     };
   }
 
-  for(var i=0;i<(calm?20:70);i++)P.push(mk());
+  for(let i=0;i<(calm?20:70);i++) P.push(mk());
 
-  function draw(t){
+  function draw(t) {
     cx.clearRect(0,0,W,H);
 
-    P.forEach(function(p){
-      p.ph+=p.sp;
-      p.rot+=.01;
-      p.y+=(p.leaf?p.vy:-p.vy*.25);
-      p.x+=Math.sin(p.ph*3)*.6*cv.dpr+(mx-.5)*1.4*cv.dpr;
+    P.forEach(function(p) {
+      p.ph += p.sp;
+      p.rot += .01;
+      p.y += p.leaf?p.vy:-p.vy*.25;
+      p.x += Math.sin(p.ph*3)*.6*cv.dpr+(mx-.5)*1.4*cv.dpr;
 
-      if(p.y>H+20){p.y=-20;p.x=Math.random()*W}
-      if(p.y<-20){p.y=H+20}
-      if(p.x<-20)p.x=W+20;
-      if(p.x>W+20)p.x=-20;
+      if(p.y>H+20) { p.y=-20; p.x=Math.random()*W; }
+      if(p.y<-20) p.y=H+20;
+      if(p.x<-20) p.x=W+20;
+      if(p.x>W+20) p.x=-20;
 
       cx.save();
       cx.translate(p.x,p.y);
 
-      if(p.leaf){
+      if(p.leaf) {
         cx.rotate(p.rot);
         cx.globalAlpha=.55;
         cx.fillStyle=p.c;
         cx.beginPath();
         cx.ellipse(0,0,p.r,p.r*.45,0,0,6.28);
         cx.fill();
-      }else{
-        var g=.4+.6*Math.abs(Math.sin(t/900+p.ph));
+      } else {
+        const g=.4+.6*Math.abs(Math.sin(t/900+p.ph));
         cx.globalAlpha=g*.8;
-        cx.shadowColor='#ffe98a';
+        cx.shadowColor="#ffe98a";
         cx.shadowBlur=12*cv.dpr;
-        cx.fillStyle='#fff3b0';
+        cx.fillStyle="#fff3b0";
         cx.beginPath();
         cx.arc(0,0,p.r,0,6.28);
         cx.fill();
@@ -1341,120 +1399,111 @@ if (donationForm && donationMessage) {
       cx.restore();
     });
 
-    if(!calm)requestAnimationFrame(draw);
+    if(!calm) requestAnimationFrame(draw);
   }
 
   requestAnimationFrame(draw);
 })();
 
-
-/* =====================================
-   GENERADOR AUTOMÁTICO DE QR
-===================================== */
-
-(function(){
-  var plate=document.getElementById('qrPlate');
-  var urlEl=document.getElementById('qrUrl');
-  var copyBtn=document.getElementById('qrCopy');
-  var status=document.getElementById('qrStatus');
-
-  if(!plate||!urlEl||!copyBtn||!status)return;
-
-  var appUrl=window.location.href.split('#')[0];
-  urlEl.textContent=appUrl;
-
-  try{
-    if(typeof qrcode!=='function'){
-      throw new Error('La librería QR no está disponible.');
-    }
-
-    var qr=qrcode(0,'M');
-    qr.addData(appUrl);
-    qr.make();
-
-    plate.innerHTML=qr.createSvgTag(4,2);
-
-    var svg=plate.querySelector('svg');
-
-    if(svg){
-      svg.setAttribute('role','img');
-      svg.setAttribute('aria-label','Código QR para abrir DFP Education');
-      svg.setAttribute('shape-rendering','crispEdges');
-    }
-  }catch(error){
-    console.error(error);
-    plate.textContent='No se pudo generar el QR. Comprueba tu conexión.';
-    status.textContent='Puedes utilizar el enlace mostrado.';
-  }
-
-  copyBtn.addEventListener('click',function(){
-    if(navigator.clipboard&&window.isSecureContext){
-      navigator.clipboard.writeText(appUrl).then(function(){
-        status.textContent='¡Enlace copiado!';
-      }).catch(function(){
-        status.textContent='No se pudo copiar el enlace.';
-      });
-    }else{
-      status.textContent='Selecciona el enlace para copiarlo.';
-      var range=document.createRange();
-      range.selectNodeContents(urlEl);
-      var selection=window.getSelection();
-      selection.removeAllRanges();
-      selection.addRange(range);
-    }
-  });
-})();
-
-
 /* =====================================
    ECO CHALLENGE
 ===================================== */
 
-(function(){
-  var questions = [
-    {q:"¿Qué debes hacer con el aceite de cocina usado?",o:["Tirarlo por el fregadero","Guardarlo en un recipiente adecuado","Echarlo al suelo","Mezclarlo con agua"],a:1,why:"Lo adecuado es dejarlo enfriar y guardarlo en un recipiente cerrado para su recolección."},
-    {q:"¿Por qué no debemos verter aceite usado por el desagüe?",o:["Puede contribuir a obstrucciones y contaminación","Limpia las tuberías","Se convierte en agua","No tiene ningún efecto"],a:0,why:"El aceite puede causar problemas en las tuberías y dificultar el tratamiento de aguas residuales."},
-    {q:"¿Qué tipo de recipiente conviene usar para almacenarlo?",o:["Un vaso abierto","Una bolsa de papel","Una botella o envase limpio con tapa","Un recipiente roto"],a:2,why:"Un envase resistente, limpio y con tapa ayuda a evitar derrames."},
-    {q:"¿Qué debes hacer antes de guardar el aceite usado?",o:["Dejarlo enfriar","Añadirle jabón","Calentarlo otra vez","Mezclarlo con productos químicos"],a:0,why:"Es importante dejar que el aceite se enfríe antes de manipularlo y almacenarlo."},
-    {q:"¿Qué significa reciclar o aprovechar un residuo?",o:["Abandonarlo en la calle","Darle un manejo adecuado para reducir desperdicios","Quemarlo sin control","Tirarlo en cualquier lugar"],a:1,why:"El aprovechamiento responsable busca reducir residuos y darles un destino apropiado."},
-    {q:"¿Quién puede ayudar a recolectar aceite usado?",o:["Solo los científicos","Solo las empresas grandes","Estudiantes, familias y comunidad","Nadie"],a:2,why:"La participación de toda la comunidad ayuda a impulsar la educación ambiental."},
-    {q:"¿Qué debes hacer si se derrama aceite?",o:["Dejarlo allí","Avisar a un adulto y limpiarlo de forma segura","Echarle más agua","Empujarlo hacia el desagüe"],a:1,why:"Pide ayuda a un adulto y evita que el aceite llegue a los desagües."},
-    {q:"¿Cuál es una buena práctica ambiental?",o:["Verter residuos en ríos","Tirar aceite en el patio","Separar y entregar el aceite usado a un sistema de recolección","Mezclar todos los residuos"],a:2,why:"Separarlo y entregarlo a un sistema de recolección permite un manejo más responsable."},
-    {q:"¿Qué promueve la economía circular?",o:["Usar y desechar todo rápidamente","Aprovechar materiales y reducir residuos","Aumentar la basura","Desperdiciar recursos"],a:1,why:"La economía circular busca mantener los materiales en uso y reducir los residuos."},
-    {q:"¿Cuál es el objetivo principal de este proyecto?",o:["Promover la recolección responsable del aceite usado","Enseñar a tirar aceite al fregadero","Producir más residuos","Contaminar menos solo por un día"],a:0,why:"El proyecto promueve la educación ambiental y el manejo responsable del aceite de cocina usado."}
+(function() {
+  const questions = [
+    {
+      q:"¿Qué debes hacer con el aceite de cocina usado?",
+      o:["Tirarlo por el fregadero","Guardarlo en un recipiente adecuado","Echarlo al suelo","Mezclarlo con agua"],
+      a:1,
+      why:"Lo adecuado es dejarlo enfriar y guardarlo en un recipiente cerrado para su recolección."
+    },
+    {
+      q:"¿Por qué no debemos verter aceite usado por el desagüe?",
+      o:["Puede contribuir a obstrucciones y contaminación","Limpia las tuberías","Se convierte en agua","No tiene ningún efecto"],
+      a:0,
+      why:"El aceite puede causar problemas en las tuberías y dificultar el tratamiento de aguas residuales."
+    },
+    {
+      q:"¿Qué tipo de recipiente conviene usar para almacenarlo?",
+      o:["Un vaso abierto","Una bolsa de papel","Una botella o envase limpio con tapa","Un recipiente roto"],
+      a:2,
+      why:"Un envase resistente, limpio y con tapa ayuda a evitar derrames."
+    },
+    {
+      q:"¿Qué debes hacer antes de guardar el aceite usado?",
+      o:["Dejarlo enfriar","Añadirle jabón","Calentarlo otra vez","Mezclarlo con productos químicos"],
+      a:0,
+      why:"Es importante dejar que el aceite se enfríe antes de manipularlo y almacenarlo."
+    },
+    {
+      q:"¿Qué significa reciclar o aprovechar un residuo?",
+      o:["Abandonarlo en la calle","Darle un manejo adecuado para reducir desperdicios","Quemarlo sin control","Tirarlo en cualquier lugar"],
+      a:1,
+      why:"El aprovechamiento responsable busca reducir residuos y darles un destino apropiado."
+    },
+    {
+      q:"¿Quién puede ayudar a recolectar aceite usado?",
+      o:["Solo los científicos","Solo las empresas grandes","Estudiantes, familias y comunidad","Nadie"],
+      a:2,
+      why:"La participación de toda la comunidad ayuda a impulsar la educación ambiental."
+    },
+    {
+      q:"¿Qué debes hacer si se derrama aceite?",
+      o:["Dejarlo allí","Avisar a un adulto y limpiarlo de forma segura","Echarle más agua","Empujarlo hacia el desagüe"],
+      a:1,
+      why:"Pide ayuda a un adulto y evita que el aceite llegue a los desagües."
+    },
+    {
+      q:"¿Cuál es una buena práctica ambiental?",
+      o:["Verter residuos en ríos","Tirar aceite en el patio","Separar y entregar el aceite usado a un sistema de recolección","Mezclar todos los residuos"],
+      a:2,
+      why:"Separarlo y entregarlo a un sistema de recolección permite un manejo más responsable."
+    },
+    {
+      q:"¿Qué promueve la economía circular?",
+      o:["Usar y desechar todo rápidamente","Aprovechar materiales y reducir residuos","Aumentar la basura","Desperdiciar recursos"],
+      a:1,
+      why:"La economía circular busca mantener los materiales en uso y reducir los residuos."
+    },
+    {
+      q:"¿Cuál es el objetivo principal de este proyecto?",
+      o:["Promover la recolección responsable del aceite usado","Enseñar a tirar aceite al fregadero","Producir más residuos","Contaminar menos solo por un día"],
+      a:0,
+      why:"El proyecto promueve la educación ambiental y el manejo responsable del aceite de cocina usado."
+    }
   ];
 
-  var index=0, score=0, answered=false;
-  var recordKey="dfp_education_eco_challenge_record";
+  let index=0, score=0, answered=false;
+  const recordKey="dfp_education_eco_challenge_record";
 
-  var number=document.getElementById("ecoQuestionNumber");
-  var scoreEl=document.getElementById("ecoScore");
-  var recordEl=document.getElementById("ecoRecord");
-  var progress=document.getElementById("ecoProgress");
-  var category=document.getElementById("ecoCategory");
-  var question=document.getElementById("ecoQuestion");
-  var options=document.getElementById("ecoOptions");
-  var feedback=document.getElementById("ecoFeedback");
-  var next=document.getElementById("ecoNext");
-  var playArea=document.getElementById("ecoPlayArea");
-  var finalArea=document.getElementById("ecoFinal");
-  var finalScore=document.getElementById("ecoFinalScore");
-  var finalMessage=document.getElementById("ecoFinalMessage");
-  var restart=document.getElementById("ecoRestart");
+  const number=document.getElementById("ecoQuestionNumber");
+  const scoreEl=document.getElementById("ecoScore");
+  const recordEl=document.getElementById("ecoRecord");
+  const progress=document.getElementById("ecoProgress");
+  const category=document.getElementById("ecoCategory");
+  const question=document.getElementById("ecoQuestion");
+  const options=document.getElementById("ecoOptions");
+  const feedback=document.getElementById("ecoFeedback");
+  const next=document.getElementById("ecoNext");
+  const playArea=document.getElementById("ecoPlayArea");
+  const finalArea=document.getElementById("ecoFinal");
+  const finalScore=document.getElementById("ecoFinalScore");
+  const finalMessage=document.getElementById("ecoFinalMessage");
+  const restart=document.getElementById("ecoRestart");
 
-  if(!number||!scoreEl||!recordEl||!progress||!question||!options||!next)return;
+  if(!number||!scoreEl||!recordEl||!progress||!question||!options||!next) return;
 
-  var record=0;
+  let record=0;
 
-  try{
+  try {
     record=Number(localStorage.getItem(recordKey))||0;
-  }catch(e){}
+  } catch(e) {}
 
   recordEl.textContent=record;
 
-  function render(){
+  function render() {
     answered=false;
-    var item=questions[index];
+    const item=questions[index];
 
     number.textContent=(index+1)+"/"+questions.length;
     scoreEl.textContent=score;
@@ -1466,84 +1515,84 @@ if (donationForm && donationMessage) {
     next.disabled=true;
     next.textContent=index===questions.length-1?"Ver resultado":"Siguiente pregunta";
 
-    item.o.forEach(function(optionText,i){
-      var button=document.createElement("button");
+    item.o.forEach(function(optionText,i) {
+      const button=document.createElement("button");
       button.type="button";
       button.className="eco-option";
       button.textContent=String.fromCharCode(65+i)+". "+optionText;
-      button.addEventListener("click",function(){
+      button.addEventListener("click",function() {
         choose(i);
       });
       options.appendChild(button);
     });
   }
 
-  function choose(choice){
-    if(answered)return;
+  function choose(choice) {
+    if(answered) return;
 
     answered=true;
-    var item=questions[index];
-    var buttons=options.querySelectorAll("button");
+    const item=questions[index];
+    const buttons=options.querySelectorAll("button");
 
-    buttons.forEach(function(button,i){
+    buttons.forEach(function(button,i) {
       button.disabled=true;
 
-      if(i===item.a)button.classList.add("correct");
-      if(i===choice&&choice!==item.a)button.classList.add("wrong");
+      if(i===item.a) button.classList.add("correct");
+      if(i===choice&&choice!==item.a) button.classList.add("wrong");
     });
 
-    if(choice===item.a){
+    if(choice===item.a) {
       score+=10;
       scoreEl.textContent=score;
       feedback.textContent="¡Correcto! "+item.why;
-    }else{
+    } else {
       feedback.textContent="No es esa opción. "+item.why;
     }
 
     next.disabled=false;
   }
 
-  function finish(){
+  function finish() {
     progress.style.width="100%";
     playArea.hidden=true;
     finalArea.hidden=false;
     finalScore.textContent=score+"/100 puntos";
 
-    if(score===100){
+    if(score===100) {
       finalMessage.textContent="¡Excelente! Dominas estos hábitos de cuidado ambiental.";
-    }else if(score>=70){
+    } else if(score>=70) {
       finalMessage.textContent="¡Muy buen trabajo! Sigue aprendiendo y compartiendo lo que sabes.";
-    }else if(score>=40){
+    } else if(score>=40) {
       finalMessage.textContent="Vas por buen camino. Repasa las explicaciones y vuelve a intentarlo.";
-    }else{
+    } else {
       finalMessage.textContent="Cada reto es una oportunidad para aprender. ¡Inténtalo otra vez!";
     }
 
-    if(score>record){
+    if(score>record) {
       record=score;
       recordEl.textContent=record;
 
-      try{
+      try {
         localStorage.setItem(recordKey,String(record));
-      }catch(e){}
+      } catch(e) {}
 
       finalMessage.textContent+=" ¡Nuevo récord!";
     }
   }
 
-  next.addEventListener("click",function(){
-    if(!answered)return;
+  next.addEventListener("click",function() {
+    if(!answered) return;
 
-    if(index<questions.length-1){
+    if(index<questions.length-1) {
       index++;
       render();
-    }else{
+    } else {
       finish();
     }
   });
 
-  if(restart){
-    restart.addEventListener("click",function(){
+  if(restart) {
+    restart.addEventListener("click",function() {
       index=0;
       score=0;
       playArea.hidden=false;
@@ -1554,8 +1603,8 @@ if (donationForm && donationMessage) {
 
   render();
 })();
-
 </script>
 
 </body>
 </html>
+```
