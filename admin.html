@@ -1,4 +1,6 @@
 
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="admin.css">
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
@@ -22,6 +25,7 @@
   <section class="login-section" id="loginSection">
 
     <div class="login-card">
+
       <div class="login-brand">
         <span class="brand-icon">🌿</span>
         <h1>DFP Education</h1>
@@ -62,9 +66,11 @@
         <p id="loginMessage" role="status"></p>
 
       </form>
+
     </div>
 
   </section>
+
 
   <!-- DASHBOARD -->
   <main id="dashboardSection" hidden>
@@ -118,6 +124,7 @@
 
     </aside>
 
+
     <!-- CONTENIDO PRINCIPAL -->
     <div class="dashboard-main" id="inicio">
 
@@ -137,6 +144,7 @@
 
       </header>
 
+
       <!-- BANNER -->
       <section class="welcome-banner">
 
@@ -149,6 +157,39 @@
         <div class="banner-icon">🌍</div>
 
       </section>
+
+
+      <!-- QR DE ACCESO ADMINISTRATIVO -->
+      <section class="admin-qr-section">
+
+        <div class="admin-qr-info">
+
+          <p class="eyebrow">ACCESO RESTRINGIDO</p>
+
+          <h2>SOLO PERSONAL AUTORIZADO</h2>
+
+          <p>
+            Escanea este código QR para acceder al
+            sistema administrativo de DFP Education.
+          </p>
+
+          <strong>
+            🔒 Acceso exclusivo para personal autorizado.
+          </strong>
+
+        </div>
+
+        <div class="admin-qr-card">
+
+          <div id="adminQrCode"></div>
+
+          <span>DFP EDUCATION</span>
+          <small>ACCESO ADMINISTRATIVO</small>
+
+        </div>
+
+      </section>
+
 
       <!-- ESTADÍSTICAS -->
       <section class="stats-section" id="estadisticas">
@@ -195,6 +236,7 @@
 
       </section>
 
+
       <!-- RESUMEN -->
       <section class="overview-section">
 
@@ -206,7 +248,9 @@
         </div>
 
         <div class="overview-card">
+
           <div class="overview-icon">🌱</div>
+
           <div>
             <h3>Gestión ambiental DFP</h3>
             <p>
@@ -214,9 +258,11 @@
               y organizar las actividades de recolección.
             </p>
           </div>
+
         </div>
 
       </section>
+
 
       <!-- GESTIÓN DE SOLICITUDES -->
       <section class="requests-section" id="solicitudes">
@@ -262,27 +308,65 @@
 
       </section>
 
+
       <!-- DONACIONES -->
       <section class="donations-section" id="donaciones">
+
         <p class="eyebrow">DFP EDUCATION</p>
+
         <h2>Compromiso ambiental</h2>
+
         <p>
           Cada solicitud representa una oportunidad para cuidar
           nuestro entorno.
         </p>
+
       </section>
 
-      <!-- PIE -->
+
+      <!-- PIE DE PÁGINA -->
       <footer class="dashboard-footer">
+
         <p>© 2026 DFP Education | Sistema administrativo</p>
         <p>Desarrollado por DFP</p>
+
       </footer>
 
     </div>
 
   </main>
 
+
+  <!-- GENERADOR QR -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const qrContainer = document.getElementById("adminQrCode");
+
+      if (typeof qrcode === "undefined") {
+        qrContainer.textContent = "No se pudo cargar el código QR.";
+        return;
+      }
+
+      const adminURL =
+        "https://daynelfragoso4-svg.github.io/DFP-EDUCATION/admin.html";
+
+      const qr = qrcode(0, "M");
+
+      qr.addData(adminURL);
+      qr.make();
+
+      qrContainer.innerHTML = qr.createImgTag(5, 10);
+
+    });
+  </script>
+
+
+  <!-- SISTEMA ADMINISTRATIVO -->
   <script src="admin.js"></script>
 
 </body>
 </html>
+```
