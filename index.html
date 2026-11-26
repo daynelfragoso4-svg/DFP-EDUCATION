@@ -12,19 +12,25 @@
 
 <style>
 :root {
+  /* COLORES PRINCIPALES */
   --ink: #173b2b;
-  --soft: #607568;
+  --soft: #4c6254;
   --moss: #267a45;
   --moss-dark: #195c34;
   --water: #70b98a;
+
+  /* FONDOS */
   --sand: #f5f8f3;
   --panel: #ffffff;
-  --line: #e1eae2;
-  --shadow: 0 12px 35px rgba(25,70,40,.07);
+  --line: #d8e5da;
+
+  /* SOMBRAS */
+  --shadow: 0 12px 35px rgba(25,70,40,.08);
+
+  /* TIPOGRAFÍAS */
   --sans: "Figtree", sans-serif;
   --serif: "Fraunces", serif;
 }
-
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -885,6 +891,85 @@ footer p {
     scroll-behavior: auto !important;
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
+  }
+}
+/* =====================================
+   MEJORA GENERAL DE LEGIBILIDAD
+===================================== */
+
+body {
+  color: #173b2b;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+p,
+.lead,
+.layer p,
+.app p {
+  color: #4c6254;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+h1, h2, h3 {
+  color: #17452e;
+  line-height: 1.25;
+}
+
+nav a {
+  color: #173b2b;
+  font-weight: 700;
+}
+
+label {
+  color: #173b2b;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  color: #173b2b;
+  font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #718477;
+  opacity: 1;
+}
+
+.eco-option {
+  color: #294b37;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.eco-feedback {
+  color: #405b49;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+button,
+.btn {
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  p,
+  .lead,
+  .layer p,
+  .app p {
+    font-size: 1rem;
+    line-height: 1.75;
   }
 }
 </style>
